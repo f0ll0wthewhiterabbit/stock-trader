@@ -3,7 +3,8 @@
     <div class="panel panel-success">
       <div class="panel-heading">
         <h3 class="panel-title">
-          {{ stock.name }} <small>(Price: {{ stock.price }})</small>
+          {{ stock.name }}
+          <small>(Price: {{ stock.price }})</small>
         </h3>
       </div>
       <div class="panel-body">
@@ -20,9 +21,7 @@
             class="btn btn-success"
             @click="buyStock"
             :disabled="quantity <= 0 || !Number.isInteger(quantity)"
-          >
-            Buy
-          </button>
+          >Buy</button>
         </div>
       </div>
     </div>
@@ -44,7 +43,8 @@ export default {
         stockPrice: this.stock.price,
         quantity: this.quantity
       }
-      console.log(order)
+
+      this.$store.dispatch('buyStock', order)
       this.quantity = 0
     }
   }
