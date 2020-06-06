@@ -19,7 +19,7 @@
         </div>
         <div class="pull-right">
           <button
-            class="btn btn-success"
+            class="btn btn-info"
             @click="sellStock"
             :disabled="insufficientQuantity || quantity <= 0 || !Number.isInteger(quantity)"
           >{{insufficientQuantity ? 'X': 'Sell'}}</button>
